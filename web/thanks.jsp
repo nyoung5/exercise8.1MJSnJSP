@@ -11,13 +11,12 @@
 
     <p>Here is the information that you entered:</p>
 
-    <jsp:useBean id="user" scope="session" class="murach.business.User"/>
     <label>Email:</label>
-    <span><jsp:getProperty name="user" property="email"/></span><br>
+    <span>${user.email}</span><br>
     <label>First Name:</label>
-    <span><jsp:getProperty name="user" property="firstName"/></span><br>
+    <span>${user.firstName}</span><br>
     <label>Last Name:</label>
-    <span><jsp:getProperty name="user" property="lastName"/></span><br>
+    <span>${user.lastName}</span><br>
 
     <p>To enter another email address, click on the Back 
     button in your browser or the Return button shown 
@@ -27,6 +26,14 @@
         <input type="hidden" name="action" value="join">
         <input type="submit" value="Return">
     </form>
-        
+    <label><strong>Current Date:</strong></label> 
+    <span>${requestScope.currentDate}</span><br>
+    <label><strong>First User:</strong></label>
+    <span>${users[0].email}</span><br>
+    <label><strong>Second User:</strong></label>
+    <span>${users[1].email}</span><br>
+    <label><strong>Customer Service Email:</strong></label> 
+    <span>${initParam.custServEmail}</span>
+    
 </body>
 </html>
